@@ -1,0 +1,86 @@
+actions:
+- action_checklocation
+- action_search_restaurants
+- action_sendemail
+- utter_ask_cuisine
+- utter_ask_emailid
+- utter_ask_emailmessage
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_price
+- utter_default
+- utter_goodbye
+- utter_greet
+entities:
+- cuisine
+- email
+- emailbody
+- location
+- price
+intents:
+- restaurant_search
+- goodbye
+- greet
+- affirm
+- stop
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_emailid:
+  - text: Please mention your email address
+  - text: provide your email address
+  utter_ask_emailmessage:
+  - text: Would like me to send you top restaurant results through mail?
+  - text: Would it be helpful if i sent you the restaurant details over email?
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  - text: what is your preferred location?
+  utter_ask_price:
+  - buttons:
+    - payload: Lesser than Rs. 300
+      title: Lesser than Rs. 300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than Rs. 700
+      title: More than Rs. 700
+    text: what price range would you prefer?
+  utter_default:
+  - text: i cannot understand
+  utter_goodbye:
+  - text: goodbye
+  - text: Bye-bye
+  - text: Bon Appetit!!
+  utter_greet:
+  - text: Hello, how can I help you?
+  - text: Hey there! How may I help you?
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How may I help you today?
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 20
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  emailbody:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
